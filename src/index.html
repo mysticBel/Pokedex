@@ -2,11 +2,108 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Data Lovers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeDex</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
   </head>
+
   <body>
-    <div id="root"></div>
+    <header>
+      <nav class="navbar-top">
+        <a href="#Home" class="navbar-top-item" title="home">Home</a>
+        <a href="#Top10" class="navbar-top-item" tittle="Top10">Top 10</a>
+        <a href="#CandyCalculator" class="navbar-top-item" tittle="Next Evolution Calculator">Calculator</a>
+        <a href="#Glossary" class="navbar-top-item" tittle="Glossary">Glossary</a>
+      </nav>
+      <div> 
+        <!-- id="navbar-logo-box">  -->
+           <!-- <img id="navbar-logo-img" src="IMG/pokemon-logo.png" alt="Pokemon logo"> -->
+           <img id= "poke-banner" src="IMG/poke-banner.jpg" alt="banner">
+      </div>
+    </header>
+      
+    <section class="filters-container">
+        <div class="filter-individual-container" id="filter-by-name-number">
+          <input type="search" class="filter-item" id="inputFilterByName" placeholder= "Search for a Pokemon by name or number"  autocomplete="on" spellcheck="true"/>
+        </div>
+        
+        <div class="filter-individual-container" id="filter-by-type">
+          <select id="filterByType-options" class="filter-item">
+            <option value="">search by type</option>
+            <option value="all">All</option>
+            <option value="bug">Bug</option>
+            <option value="dark">Dark</option>
+            <option value="dragon"> Dragon</option>
+            <option value="electric">Electric</option>
+            <option value="fairy">Fairy</option>
+            <option value="fighting">Fighting</option>
+            <option value="fire">Fire</option>
+            <option value="flying">Flying</option>
+            <option value="ghost">Ghost</option>
+            <option value="grass">Grass</option>
+            <option value="ground">Ground</option>
+            <option value="ice">Ice</option>
+            <option value="normal">Normal</option>
+            <option value="poison">Poison</option>
+            <option value="psychic">Psychic</option>
+            <option value="rock">Rock</option>
+            <option value="steel">Steel</option>
+            <option value="water"> Water</option>
+          </select>
+        </div>
+
+        <div class="filter-individual-container" id="filter-order-by" >
+          <select id="orderBy-options" class="filter-item" >
+            <option value=""> Order by... </option>
+            <option value="Lowest Number">Lowest Number</option>
+            <option value="Highest Number">Highest Number</option>
+            <option value="A-Z">A-Z</option>
+            <option value="Z-A">Z-A</option>
+          </select>
+        </div>
+
+        <div class="filter-individual-container" id="sort-by" >
+          <select id="sort-by-order" class="filter-item" >
+            <option value=""> Sort by... </option>
+            <option value="descendingCp"> Max CP </option>
+            <option value="ascendingCp"> Min CP </option>
+            <option value="descendingHp"> Max HP </option>
+            <option value="ascendingHp"> Min HP </option>
+          </select>
+      </div>
+        <div class="filter-individual-container"  >
+          <button type="button" class="button" id="refresh"> refresh </button>
+        </div>
+
+    </section>
+
+    <main> 
+
+    <div class="pokemones-main">
+      <div class="pokemones-quantity" >
+        <p>Results( <spam id="quantity"></spam> )</p>
+      </div>
+
+      <div id="container-card"></div>  
+      <div class="container-modal"></div>
+
+    </main>
+
+    <section id= CandyCalculator>
+      
+      <div id="container-calculator"></div>  
+
+    </section>
+
+
+
+
+    
+
     <script src="main.js" type="module"></script>
   </body>
 </html>

@@ -1,6 +1,241 @@
-import { example } from './data.js';
-// import data from './data/lol/lol.js';
 import data from './data/pokemon/pokemon.js';
-// import data from './data/rickandmorty/rickandmorty.js';
+import { filterByName , filterByType, pokemonOrder} from './data.js';
 
-console.log(example, data);
+const pokemonList = data.pokemon;
+const containerPokemons = document.getElementById('container-card');
+// const containerModal = document.querySelector('.container-modal');
+const colors = {
+	fire: '#FDDFDF',
+	grass: '#DEFDE0',
+	electric: '#FCF7DE',
+	water: '#DEF3FD',
+	ground: '#f4e7da',
+	rock: '#d5d5d4',
+	fairy: '#fceaff',
+	poison: '#e6e6ff',
+	bug: '#f8d5a3',
+	dragon: '#97b3e6',
+	psychic: '#eaeda1',
+	flying: '#F5F5F5',
+	fighting: '#E6E0D4',
+	normal: '#F5F5F5'
+};
+
+
+
+
+// --------------------filterByName----------
+
+const MessageError = () => {
+  containerPokemons.innerHTML = '';
+  const div = document.createElement('div');
+  const p = document.createElement('p');
+  const img = document.createElement('img');
+     div.className = 'message-error';
+     img.src = 'IMG/psyduck-confussed.gif';
+     p.innerHTML = '🤪⚠️. . . Oopps !! Error 404 Pokemon Not Found!  ';
+  div.appendChild(img);
+  div.appendChild(p);
+  containerPokemons.appendChild(div);
+};
+
+const inputSearch = document.querySelector('#inputFilterByName');
+
+inputSearch.addEventListener('keyup', () => {
+  const searchedPokemons = filterByName(pokemonList, inputSearch.value);
+  if (searchedPokemons.length === 0) {
+    MessageError();
+    document.getElementById('quantity').innerHTML = 0;
+  } else {
+    containerPokemons.innerHTML = '';
+    showPokemon(searchedPokemons);
+  }
+});
+
+
+// --------------filterByType------------
+
+const elementTypeFilter = document.querySelector('#filterByType-options');
+
+elementTypeFilter.addEventListener('change', () => {
+  if (elementTypeFilter.value === 'all' || elementTypeFilter.value === '' ) {
+    containerPokemons.innerHTML = '';
+    showPokemon(pokemonList);
+  } else {
+    const filteredPokemonsByType = filterByType(pokemonList, elementTypeFilter.value);
+    containerPokemons.innerHTML = '';
+    showPokemon(filteredPokemonsByType);
+  }
+});
+
+
+// --------------order options------------
+
+const optionsOrder =document.querySelector('#orderBy-options');
+
+optionsOrder.addEventListener("change" , () => {
+  const selection = optionsOrder.value;
+  if (optionsOrder.value === '') {
+    containerPokemons.innerHTML = '';
+    showPokemon(pokemonList);
+  } else {
+    const dataOrder = pokemonOrder.differentOrder(pokemonList,selection);
+    
+    containerPokemons.innerHTML = '';
+     showPokemon(dataOrder);
+  }});
+
+//-----sortby options --------------------
+
+const optionsSortBy =document.querySelector('#sort-by-order');
+
+optionsSortBy.addEventListener("change" , () => {
+  const selection2 = optionsSortBy.value;
+if (optionsSortBy.value === '') {
+  containerPokemons.innerHTML = '';
+  showPokemon(pokemonList);
+} else {
+  const sortByOrder = pokemonOrder.sortedByOrder(pokemonList,selection2);
+  containerPokemons.innerHTML = '';
+     showPokemon(sortByOrder);
+}});
+
+// --------------reload------------
+
+document.getElementById("refresh").addEventListener("click", () => {
+  location.reload();
+});
+
+
+//-------Show Pokemons + counter-------------------
+
+const TypePokemon = (arrayType) => {
+    let imgEachPokemon = '';
+    arrayType.forEach((typeElement) => {
+      imgEachPokemon += `<div id="poke-type-icon-box"><img id="poke-type-icon"src="type-icons/${typeElement}.png" alt=" type pokemon"/><div>`;  
+    });
+    return imgEachPokemon;
+  };
+ 
+
+const backgroundType = (arrayType) =>{
+  let colorEachBackground = '';
+  arrayType.forEach((typeElement) => {
+    colorEachBackground =  colors[typeElement];
+ 
+  });
+  return colorEachBackground;
+}  
+
+const showPokemon = (list) => {
+    let count = 0;
+    list.forEach((pokem) => {
+      const card = document.createElement('div');
+      card.className = 'pokemon-group';
+      card.style.background = backgroundType(pokem.type);
+      card.innerHTML = `
+        <div class="poke-img">
+          <p class="poke-num">Nº ${pokem.num}</p>
+          <img src="${pokem.img}">
+          
+        </div>
+        
+        <div class="container-info">
+          <p class="poke-name">${pokem.name}</p>
+          <!--<div class="comun">${pokem.type}</div>-->
+          
+          <p class="poke-info bold"> CP Máx: ${pokem.stats['max-cp']}</p>
+          <p class="poke-info bold"> HP Máx: ${pokem.stats['max-hp']}</p
+        <div id="poke-type-icon-container">${TypePokemon(pokem.type)}</div>
+          </div>
+        
+      
+        `;
+  
+      card.addEventListener('click', () => {
+        const show = showModal(pokem);
+        show.classList.add('modal');
+      });
+      count += 1;
+      containerPokemons.appendChild(card);
+    });
+    document.getElementById('quantity').innerHTML = count;
+    return containerPokemons;
+  };
+
+  showPokemon(pokemonList);
+
+
+
+//---------------Show modals -------------------
+  const showModal = (pkm) => {
+    const modal = document.createElement('div');
+
+    modal.classList.add('modal');
+    modal.innerHTML = `<div class="modal-flex"> 
+                        <div class="modal-info">
+                           <p class="poke-name-card bold">${pkm.name} N°<spam>${pkm.num}</spam></p>
+                           <img class="threeD-IMG" src= "https://projectpokemon.org/images/normal-sprite/${pkm.name}.gif"></img> 
+                           <p class="about">${pkm.about}</p>
+                           <div>
+                                  <p class="type">Type</p>
+                                  <p>${TypePokemon(pkm.type)}</p>
+                                </div>                                
+                            </div>
+                            <div class="comun-modal contenido">
+                                <div>
+                                  <p class="bold">Height</p>
+                                  <p>${pkm.size.height}</p>
+                                </div>                                
+                        </div> 
+
+                        <div class="comun-modal contenido">                            
+                              <div>
+                                <p class="bold">Weight</p>
+                                <p>${pkm.size.weight}</p>
+                              </div>
+                         </div>
+
+                        <div class="comun-modal contenido">   
+                         <div>
+                           <p class="bold">Resistant</p>
+                           <p>${TypePokemon(pkm.resistant)}</p>
+                          </div>
+                        </div>
+
+                        <div class="comun-modal contenido">   
+                         <div>
+                           <p class="bold">Weaknesses</p>
+                           <p>${TypePokemon(pkm.weaknesses)}</p>
+                          </div>
+                        </div>
+
+                        <div class="comun-modal contenido">   
+                         <div>
+                           <p class="bold">egg</p>
+                           <p>${pkm.egg}</p>
+                          </div>
+                        </div>
+                        
+                        <div class="comun-modal contenido">   
+                         <div>
+                           <p class="bold">Evolution</p>
+
+                           <p>${pkm.evolution.candy}</p>
+                          </div>
+                        </div>
+                   
+
+
+                      </div>
+                      
+                      `;
+    document.querySelector('.container-modal').appendChild(modal);
+  }
+  const modal = document.createElement('div');
+    for (let i=0; i<252; i++){
+        showModal(data.pokemon[i]);
+        modal.style.display = 'hide';
+    }
+
+    
