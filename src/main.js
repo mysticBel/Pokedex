@@ -4,6 +4,7 @@ import { filterByName , filterByType, pokemonOrder} from './data.js';
 const pokemonList = data.pokemon;
 const containerPokemons = document.getElementById('container-card');
 // const containerModal = document.querySelector('.container-modal');
+
 const colors = {
 	fire: '#FDDFDF',
 	grass: '#DEFDE0',
@@ -153,8 +154,8 @@ const showPokemon = (list) => {
         `;
   
       card.addEventListener('click', () => {
-        const show = showModal(pokem);
-        show.classList.add('modal');
+        showModal(pokem);
+        
       });
       count += 1;
       containerPokemons.appendChild(card);
@@ -172,54 +173,54 @@ const showPokemon = (list) => {
     const modal = document.createElement('div');
 
     modal.classList.add('modal');
-    modal.innerHTML = `<div class="modal-flex"> 
+    modal.innerHTML = `<div class="modal-content"> 
+                        <span class="close">&times;</span>
                         <div class="modal-info">
                            <p class="poke-name-card bold">${pkm.name} N°<spam>${pkm.num}</spam></p>
                            <img class="threeD-IMG" src= "https://projectpokemon.org/images/normal-sprite/${pkm.name}.gif"></img> 
                            <p class="about">${pkm.about}</p>
-                           <div>
-                                  <p class="type">Type</p>
-                                  <p>${TypePokemon(pkm.type)}</p>
-                                </div>                                
-                            </div>
-                            <div class="comun-modal contenido">
+                           <p class="omun-modal contenido"">Type</p>
+                           <p>${TypePokemon(pkm.type)}</p>
+                         </div>                                
+                       
+                          <div class="comun-modal contenido">
                                 <div>
                                   <p class="bold">Height</p>
                                   <p>${pkm.size.height}</p>
                                 </div>                                
-                        </div> 
+                          </div> 
 
-                        <div class="comun-modal contenido">                            
+                           <div class="comun-modal contenido">                            
                               <div>
                                 <p class="bold">Weight</p>
                                 <p>${pkm.size.weight}</p>
                               </div>
-                         </div>
-
-                        <div class="comun-modal contenido">   
+                           </div>
+                        
+                        <div class="modal-flex1">   
                          <div>
-                           <p class="bold">Resistant</p>
+                           <p class="">Resistant</p>
                            <p>${TypePokemon(pkm.resistant)}</p>
                           </div>
                         </div>
 
                         <div class="comun-modal contenido">   
                          <div>
-                           <p class="bold">Weaknesses</p>
+                           <p class="">Weaknesses</p>
                            <p>${TypePokemon(pkm.weaknesses)}</p>
                           </div>
                         </div>
 
                         <div class="comun-modal contenido">   
                          <div>
-                           <p class="bold">egg</p>
+                           <p class="">egg</p>
                            <p>${pkm.egg}</p>
                           </div>
                         </div>
                         
                         <div class="comun-modal contenido">   
                          <div>
-                           <p class="bold">Evolution</p>
+                           <p class="icon-type">Evolution</p>
 
                            <p>${pkm.evolution.candy}</p>
                           </div>
@@ -228,14 +229,19 @@ const showPokemon = (list) => {
 
 
                       </div>
-                      
+                     </div> 
                       `;
     document.querySelector('.container-modal').appendChild(modal);
+    modal.style.display="block";
+
+    // close-tag
+    let closetag = modal.querySelector(".close");
+    closetag.addEventListener("click", () =>{
+      modal.style.display = "none";
+    })
   }
-  const modal = document.createElement('div');
-    for (let i=0; i<252; i++){
-        showModal(data.pokemon[i]);
-        modal.style.display = 'hide';
-    }
+  
+  
+    
 
     

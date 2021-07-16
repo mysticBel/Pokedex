@@ -4,12 +4,12 @@
     font-family: 'Poppins', sans-serif; 
    }
    
-/* 
-  body{
-    /* background: #EFEFBB; */
-	/* background: -webkit-linear-gradient(to right, #D4D3DD, #EFEFBB); */
-	/* background: linear-gradient(to right, #D4D3DD, #EFEFBB); */
-    /* background: linear-gradient(to right,#146b9e91  ,#dafcf7 ); 
+
+  /* body{
+    background: #EFEFBB;
+	background: -webkit-linear-gradient(to right, #D4D3DD, #EFEFBB);
+	background: linear-gradient(to right, #D4D3DD, #fcfc5ea4);
+    background: linear-gradient(to right,#256bbb75  ,#ebdda856 ); 
 
   }  */
 
@@ -252,6 +252,74 @@
     
 }
 
+/* Estilos del Modal */
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(8, 8, 8, 0.575); /* Black w/ opacity */
+   
+  }
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 60px;
+    border: 1px solid #888;
+    width: 40%;
+    text-align: center;
+    
+
+  }
+
+
+  .threeD-IMG{
+      width: 22%;
+  }
+  .comun-modal contenido{
+      display:flex;
+      flex-wrap: wrap;
+      height:10px
+  }
+
+
+
+  .icon-type{
+    width: 40px;
+    height: 40px;
+    margin: 3px;
+  }
+  /* .comun-modal contenido{
+ 
+  } */
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+
+
+
+
 /* estilos del footer */
 
 footer{
@@ -339,3 +407,13 @@ footer .team{
     }
   
     }
+
+
+
+    .modal-flex1{
+       
+        display:flex;
+        width: 10px;
+        height:100%;
+        margin: auto;
+    } 
