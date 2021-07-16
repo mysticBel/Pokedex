@@ -99,4 +99,9 @@ export const pokemonOrder = {
 
 
 
+// función a invocar para el conteo de tipos
 
+export const countTypes = (data, valuetype) =>  {  
+  const type = valuetype.toLowerCase();
+  return data.filter(a => a.includes(type)).length;
+}

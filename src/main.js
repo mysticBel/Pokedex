@@ -4,6 +4,7 @@ import { filterByName , filterByType, pokemonOrder} from './data.js';
 const pokemonList = data.pokemon;
 const containerPokemons = document.getElementById('container-card');
 // const containerModal = document.querySelector('.container-modal');
+const listTopPokemon = document.getElementById('top-10')
 
 const colors = {
 	fire: '#FDDFDF',
@@ -21,7 +22,6 @@ const colors = {
 	fighting: '#E6E0D4',
 	normal: '#F5F5F5'
 };
-
 
 
 
@@ -244,4 +244,7 @@ const showPokemon = (list) => {
   
     
 
-    
+    listTopPokemon.addEventListener('click', () => {
+  window.location.assign('./type-chart.html');
+  
+});
