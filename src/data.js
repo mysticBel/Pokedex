@@ -105,3 +105,8 @@ export const countTypes = (data, valuetype) =>  {
   const type = valuetype.toLowerCase();
   return data.filter(a => a.includes(type)).length;
 }
+
+// //función para ordenar top10
+// export const orderBySpawn = (a, b) =>{
+//   return a['spawn-chance'] - b['spawn-chance'];
+// }

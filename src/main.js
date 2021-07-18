@@ -4,7 +4,7 @@ import { filterByName , filterByType, pokemonOrder} from './data.js';
 const pokemonList = data.pokemon;
 const containerPokemons = document.getElementById('container-card');
 // const containerModal = document.querySelector('.container-modal');
-const listTopPokemon = document.getElementById('top-10')
+
 
 const colors = {
 	fire: '#FDDFDF',
@@ -242,9 +242,15 @@ const showPokemon = (list) => {
   }
   
   
-    
+   
+    // const showStatistics= document.getElementById('bar-chart')
 
-    listTopPokemon.addEventListener('click', () => {
-  window.location.assign('./type-chart.html');
+
+    //  statisticsButton.addEventListener('click', () => {
+    //   showStatistics.style.display = "block";
+    
   
-});
+// 
+//  const statisticsPokemon = document.getElementById('statistics')
+// statisticsPokemon.addEventListener('click', () => {
+// window.location.assign('./type-chart.html')});
