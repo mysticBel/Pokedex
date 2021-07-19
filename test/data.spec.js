@@ -1,4 +1,4 @@
-import { filterByName } from '../src/data.js';
+import { filterByName , attackName , calculateDmgStab , calculateDps,calculateEps } from '../src/data.js';
 import data from '../src/data/pokemon/pokemon.js';
 
 describe('filterByName', () => {
@@ -6,6 +6,128 @@ describe('filterByName', () => {
     const result = filterByName(data.pokemon,'ivysaur');
     expect(result[0].name).toBe('ivysaur');
   });
+});
+
+
+////////////////////////////////////////////////////////
+////////////////// ATTACK NAME ////////////////////////
+//////////////////////////////////////////////////////// 
+
+
+describe('Return pokemons ATTACKS NAME', () => {
+  // prueba 1 
+  it('order by attacks name', () => {
+    const data = {
+      'quick-move': [{
+          'name': 'vine whip',
+          'type': 'grass',
+          'base-damage': '7',
+          'energy': '6',
+          'move-duration-seg': '0.6'
+        },
+        {
+          'name': 'tackle',
+          'type': 'normal',
+          'base-damage': '5',
+          'energy': '5',
+          'move-duration-seg': '0.5'
+        }
+      ]
+    };
+
+    const result = ['vine whip', 'tackle'];
+    expect(attackName(data['quick-move'])).toEqual(result);
+  })
+});
+
+////////////////////////////////////////////////////////
+/////////////CALCULATE DMG STAB/////////////////////////
+////////////////////////////////////////////////////////  
+
+describe('CALCULATE STAB DAMAGE', () => {
+  // prueba 1 
+  it('CALCULATE STAB DAMAGE', () => {
+    const data = {
+      'quick-move': [{
+          'name': 'vine whip',
+          'type': 'grass',
+          'base-damage': '7',
+          'energy': '6',
+          'move-duration-seg': '0.6'
+        },
+        {
+          'name': 'tackle',
+          'type': 'normal',
+          'base-damage': '5',
+          'energy': '5',
+          'move-duration-seg': '0.5'
+        }
+      ]
+    };
+
+    const result = [8.4, 5];
+    expect(calculateDmgStab(data['quick-move'], 'grass')).toEqual(result);
+  })
+});
+
+////////////////////////////////////////////////////////
+///////////// CALCULATE DPS /////////////////////////
+////////////////////////////////////////////////////////  
+
+describe('Return pokemons CALCULATE DPS', () => {
+  // prueba 1 
+  it('CALCULATE DPS DAMAGE', () => {
+    const data = {
+      'quick-move': [{
+          'name': 'vine whip',
+          'type': 'grass',
+          'base-damage': '7',
+          'energy': '6',
+          'move-duration-seg': '0.6'
+        },
+        {
+          'name': 'tackle',
+          'type': 'normal',
+          'base-damage': '5',
+          'energy': '5',
+          'move-duration-seg': '0.5'
+        }
+      ]
+    };
+
+    const result = [14, 10];
+    expect(calculateDps(data['quick-move'], 'grass')).toEqual(result);
+  })
+});
+
+////////////////////////////////////////////////////////
+///////////// CALCULATE EPS /////////////////////////
+////////////////////////////////////////////////////////  
+
+describe('Return pokemons CALCULATE EPS', () => {
+  // prueba 1 
+  it('CALCULATE EPS DAMAGE', () => {
+    const data = {
+      'quick-move': [{
+          'name': 'vine whip',
+          'type': 'grass',
+          'base-damage': '7',
+          'energy': '6',
+          'move-duration-seg': '0.6'
+        },
+        {
+          'name': 'tackle',
+          'type': 'normal',
+          'base-damage': '5',
+          'energy': '5',
+          'move-duration-seg': '0.5'
+        }
+      ]
+    };
+
+    const result = [10, 10];
+    expect(calculateEps(data['quick-move'], 'grass')).toEqual(result);
+  })
 });
 
 

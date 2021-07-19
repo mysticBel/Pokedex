@@ -1,5 +1,6 @@
 import data from './data/pokemon/pokemon.js';
-import { filterByName , filterByType, pokemonOrder} from './data.js';
+import { filterByName , filterByType, pokemonOrder,
+  attackName,calculateDps, calculateEps,calculateDmgStab} from './data.js';
 
 const pokemonList = data.pokemon;
 const containerPokemons = document.getElementById('container-card');
@@ -149,7 +150,6 @@ const showPokemon = (list) => {
           <p class="poke-info bold"> HP Máx: ${pokem.stats['max-hp']}</p
         <div id="poke-type-icon-container">${TypePokemon(pokem.type)}</div>
           </div>
-        
       
         `;
   
@@ -180,7 +180,7 @@ const showPokemon = (list) => {
                            <img class="threeD-IMG" src= "https://projectpokemon.org/images/normal-sprite/${pkm.name}.gif"></img> 
                            <p class="about">${pkm.about}</p>
                            <p class="omun-modal contenido"">Type</p>
-                           <p>${TypePokemon(pkm.type)}</p>
+                           <p>${pkm.type}</p>
                          </div>                                
                        
                           <div class="comun-modal contenido">
@@ -196,20 +196,58 @@ const showPokemon = (list) => {
                                 <p>${pkm.size.weight}</p>
                               </div>
                            </div>
+
+
+                           // added
+
+                           <article class="column" >
+                           <h2 class="subtitle">Stats </h2>
+                               <p> Max-HP<br>${pkm.stats['max-hp']} </p>
+                               <p> Max-CP<br>${pkm.stats['max-cp']} </p>
+                               <p> Base-attack<br>${pkm.stats['base-attack']} </p>
+                               <p> Base-Defense<br>${pkm.stats['base-defense']}</p>
+                               <p> Base-Stamina<br>${pkm.stats['base-stamina']}</p>
+                             </article> 
                         
                         <div class="modal-flex1">   
                          <div>
-                           <p class="">Resistant</p>
-                           <p>${TypePokemon(pkm.resistant)}</p>
+                           <p class="">Resistant</p>                       
+                           <p>${pkm.resistant}</p>
                           </div>
                         </div>
 
                         <div class="comun-modal contenido">   
                          <div>
-                           <p class="">Weaknesses</p>
-                           <p>${TypePokemon(pkm.weaknesses)}</p>
+                           <p class="">Weaknesses</p>                   
+                           <p>${pkm.weaknesses}</p>
                           </div>
                         </div>
+
+
+                        //added
+                        <article class="rows">
+                        <table>
+                        <tr><td class='tittleAttack' colspan="${(attackName(pkm['quick-move'])).length+1}.">QUICK MOVE</td></tr>
+                        <tr><td>Name </td>${showTable(attackName(pkm['quick-move']))   }</tr>
+                        <tr><td>DPS  </td> ${showTable(calculateDps(pkm['quick-move'], pkm.type))}</tr>
+                        <tr><td>EPS  </td> ${showTable(calculateEps(pkm['quick-move']))}</tr>
+                        <tr><td>STAB  </td> ${showTable(calculateDmgStab(pkm['quick-move'], pkm.type))}</tr>
+                   
+                      </table>
+                      </article>
+                      <article class="rows">
+                      <table>
+                        <tr><td class='tittleAttack' colspan="${(attackName(pkm['special-attack'])).length+1}.">SPECIAL ATTACK</td></tr>
+                        <tr><td>Name  </td>${showTable(attackName(pkm['special-attack']))}</tr> 
+                        <tr><td>DPS  </td> ${showTable(calculateDps(pkm['special-attack'], pkm.type))}</tr>
+                        <tr><td>EPS  </td> ${showTable(calculateEps(pkm['special-attack']))}</tr>
+                        <tr><td>STAB  </td> ${showTable(calculateDmgStab(pkm['special-attack'], pkm.type))}</tr>
+                       
+                      </table>
+                      </article>
+
+
+                        //end added
 
                         <div class="comun-modal contenido">   
                          <div>
@@ -241,6 +279,12 @@ const showPokemon = (list) => {
     })
   }
   
+
+  function showTable(data) {
+    const table = data.map(elemento => {
+      return `<td>${elemento}</td>`
+    }).join('');
+    return table;
   
    
     // const showStatistics= document.getElementById('bar-chart')
@@ -249,8 +293,8 @@ const showPokemon = (list) => {
     //  statisticsButton.addEventListener('click', () => {
     //   showStatistics.style.display = "block";
     
-  
-// 
-//  const statisticsPokemon = document.getElementById('statistics')
-// statisticsPokemon.addEventListener('click', () => {
-// window.location.assign('./type-chart.html')});
+  }
+
+ // en el modal.. 
+//<p>${TypePokemon(pkm.resistant)}</p>
+//  <p>${TypePokemon(pkm.type)}</p>
