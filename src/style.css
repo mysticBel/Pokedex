@@ -55,6 +55,7 @@
    
    #poke-banner{
        width: 100%;
+    
    }
    
 
@@ -151,11 +152,12 @@
 #container-card{/**contenedor de card*/
     margin-left: auto;
     margin-right: auto;
-    max-width: 1500px;
+    max-width: 1400px;
     padding: 1em 1em;
     display: flex;
     flex-wrap:wrap;
     justify-content: space-evenly;
+   
 }
 
 .pokemon-group{
@@ -164,9 +166,12 @@
     padding: 1em;
     margin: 1em;
     border-radius: 1em;
-    max-width:300px;
+    max-width:270px;
     min-width: 270px;
     cursor: pointer;
+    height:345px;
+    
+  
 }
 
 .pokemon-group:hover{ 
@@ -194,7 +199,7 @@
     text-transform: capitalize;
     font-size: 1.2em;
     text-align: center;
-    background-color:  #97b5d1;
+    background-color:  #97b5d183;
     border-radius: 0.4em;
     color: white;
     margin: 0.5em  ;
@@ -203,12 +208,17 @@
 
 }
 .poke-img{
-    height: 140px;
+    height: 80px;
     text-align: center;
+    
+    
 }
 
 #poke-container-img{
     height: 350px;
+   
+   
+
 }
 
 .poke-type{
@@ -221,8 +231,10 @@
 .container-info {
     font-size: 14px;
     /* padding-left: 1em; */
+    padding-top: 80px;
     height: 90px;
     text-align: center;
+    
 
 }
 .poke-info {
@@ -261,6 +273,34 @@
     text-align: center;
     
 }
+
+.bug{background-image: url('background-type-card/bug.png');}
+.grass{background-image: url('background-type-card/grass.jpg');}
+.dark{background-image: url('background-type-card/dark.png');}
+.dragon{background-image: url('background-type-card/dragon.png');}
+.electric{background-image: url('background-type-card/electric.png');}
+.fairy{background-image: url('background-type-card/fairy.png');}
+.fighting{background-image: url('background-type-card/fighting.png');}
+.fire{background-image: url('background-type-card/fire.png');}
+.flying{background-image: url('background-type-card/flying.png');}
+.ghost{background-image: url('background-type-card/ghost.png');}
+.grass{background-image: url('background-type-card/grass.png');}
+.ground{background-image: url('background-type-card/ground.png');}
+.ice{background-image: url('background-type-card/ice.png');}
+.normal{background-image: url('background-type-card/normal.png');}
+.poison{background-image: url('background-type-card/poison.png');}
+.psychic{background-image: url('background-type-card/psychic.png');}
+.rock{background-image: url('background-type-card/rock.png');}
+.steel{background-image: url('background-type-card/steel.png');}
+.water{background-image: url('background-type-card/water.png');}
+.comun-card{
+    background-size: 100%;
+
+
+}
+
+
+
 
 /* Estilos del Modal */
 

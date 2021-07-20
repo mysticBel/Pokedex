@@ -130,22 +130,23 @@ const TypePokemon = (arrayType) => {
 // }  
 
 
-const backgroundType = (arrayType) =>{
-  let colorEachBackground = '';
-  arrayType.forEach((typeElement) => {
-    colorEachBackground =  `<img id="poke-background-card" src="background-type-card/${typeElement}.png" alt=" background type pokemon"/>`;
+// const backgroundType = (arrayType) =>{
+//   let colorEachBackground = '';
+//   arrayType.forEach((typeElement) => {
+//     colorEachBackground =  `<img id="poke-background-card" src="background-type-card/${typeElement}.png" alt=" background type pokemon"/>`;
  
-  });
-  return colorEachBackground;
-}  
+//   });
+//   return colorEachBackground;
+// }  
 
 const showPokemon = (list) => {
     let count = 0;
     list.forEach((pokem) => {
       const card = document.createElement('div');
       card.className = 'pokemon-group';
-      card.style.background = backgroundType(pokem.type);
+      // card.style.background = backgroundType(pokem.type);
       card.innerHTML = `
+        <div class="${pokem.type[0]} comun-card">
         <div class="poke-img">
           <p class="poke-num">Nº ${pokem.num}</p>
           <div id="poke-container-img"> <img src="${pokem.img}"></div>
@@ -155,7 +156,8 @@ const showPokemon = (list) => {
         <div class="container-info">
           <p class="poke-name">${pokem.name}</p>
           <!--<div class="comun">${pokem.type}</div>-->
-          
+          <p class="poke-info bold"> CP Máx: ${pokem.stats['max-cp']}</p>
+          <p class="poke-info bold"> HP Máx: ${pokem.stats['max-hp']}</p>
          
         <div id="poke-type-icon-container">${TypePokemon(pokem.type)}</div>
           </div>
