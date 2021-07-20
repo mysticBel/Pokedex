@@ -266,6 +266,17 @@
     
 }
 
+
+#poke-type-label-box {
+    width: 65px;
+    display:flex;
+    flex-direction: column;
+}
+
+#poke-type-label{
+width: 100%;margin:2.5px;
+}
+
 .message-error{
     color: rgba(211, 74, 25, 0.871);
     font-size:200 px;
@@ -324,22 +335,40 @@
     margin: auto;
     padding: 60px;
     border: 1px solid #888;
-    width: 40%;
-    text-align: center;
-    
+    width: 50%;
+    text-align: center; 
+    height:800px;  
+    border-radius:25px;
 
   }
 
+  #modal-img{
+    width: 170px;
+    text-align: center; 
+  }
 
   .threeD-IMG{
-      width: 22%;
+      width: 70%;
+  }
+  .modal-info-name{
+    display:flex;
+    flex-direction: column;
+    width: 200px;
   }
   .comun-modal contenido{
       display:flex;
+      /* flex-direction: row; */
       flex-wrap: wrap;
-      height:10px
+      width: 400px auto;
+     
   }
 
+  .modal-info{
+    display:flex;
+    flex-direction: row;
+    width: 100px;
+    
+  }
 
 
   .icon-type{
@@ -347,6 +376,30 @@
     height: 40px;
     margin: 3px;
   }
+
+
+  #modal-characteristics{
+  display: flex;
+  flex-direction: row;
+ 
+  }
+
+  #modal-resistant-weaknesses{
+    display: flex;
+    width:500px;
+    flex-direction: row;
+    justify-content:space-around;
+
+  }
+
+
+  #modal-flex{
+    display: flex;
+    justify-content:space-between;
+    
+  }  
+  
+
   /* .comun-modal contenido{
  
   } */

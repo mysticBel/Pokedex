@@ -119,7 +119,13 @@ const TypePokemon = (arrayType) => {
     return imgEachPokemon;
   };
  
-
+  const TypePokemonLabels = (arrayType) => {
+    let labelEachPokemon = '';
+    arrayType.forEach((typeElement) => {
+      labelEachPokemon += `<div id="poke-type-label-box"><img id="poke-type-label"src="type-labels/${typeElement}.png" alt=" type pokemon labels"/><div>`;  
+    });
+    return labelEachPokemon;
+  };
 // const backgroundType = (arrayType) =>{
 //   let colorEachBackground = '';
 //   arrayType.forEach((typeElement) => {
@@ -187,14 +193,12 @@ const showPokemon = (list) => {
     modal.innerHTML = `<div class="modal-content"> 
                         <span class="close">&times;</span>
                         <div class="modal-info">
-                           <p class="poke-name-card bold">${pkm.name} N°<spam>${pkm.num}</spam></p>
-                           <img class="threeD-IMG" src= "https://projectpokemon.org/images/normal-sprite/${pkm.name}.gif"></img> 
-                           <p class="about">${pkm.about}</p>
-                           <p class="omun-modal contenido"">Type</p>
-                           <p>${pkm.type}</p>
-                         </div>                                
-                       
-                          <div class="comun-modal contenido">
+                         <div class= modal-info-name">
+                           <p class="poke-name">${pkm.name} N°<spam class="poke-num">${pkm.num}</spam></p>   
+                           <div> <img id="modal-img" src="${pkm.img}"></div>
+                           <p class="about">${pkm.about}</p> 
+                            
+                           <div class="comun-modal contenido">
                                 <div>
                                   <p class="bold">Height</p>
                                   <p>${pkm.size.height}</p>
@@ -206,36 +210,47 @@ const showPokemon = (list) => {
                                 <p class="bold">Weight</p>
                                 <p>${pkm.size.weight}</p>
                               </div>
+                              
                            </div>
+                           
+                        
+                      </div>
+                                                                          
+                        <div>Type  ${TypePokemonLabels(pkm.type)}</div> 
+                         
+                        </div> 
+                      
 
+                        
+                         <div id="modal-resistant-weaknesses">
+                         <table>               
+                         <tr> Resistant <br> ${TypePokemonLabels(pkm.resistant)}</tr>                
+                         <tr> Weaknesses <br> ${TypePokemonLabels(pkm.weaknesses)}</tr> 
+                          
+                          </table>
+                          </div>
+                      
+                        
+                     
 
-                           // added
-
+                           
+                        <div class="comun-modal contenido">
                            <article class="column" >
                            <h2 class="subtitle">Stats </h2>
+                           <div id="modal-characteristics">
                                <p> Max-HP<br>${pkm.stats['max-hp']} </p>
                                <p> Max-CP<br>${pkm.stats['max-cp']} </p>
                                <p> Base-attack<br>${pkm.stats['base-attack']} </p>
                                <p> Base-Defense<br>${pkm.stats['base-defense']}</p>
                                <p> Base-Stamina<br>${pkm.stats['base-stamina']}</p>
-                             </article> 
+                            </div>
+                           </article> 
                         
-                        <div class="modal-flex1">   
-                         <div>
-                           <p class="">Resistant</p>                       
-                           <p>${pkm.resistant}</p>
-                          </div>
-                        </div>
-
-                        <div class="comun-modal contenido">   
-                         <div>
-                           <p class="">Weaknesses</p>                   
-                           <p>${pkm.weaknesses}</p>
-                          </div>
-                        </div>
+                       
 
 
-                        //added
+                    <div id="modal-flex">
+
                         <article class="rows">
                         <table>
                         <tr><td class='tittleAttack' colspan="${(attackName(pkm['quick-move'])).length+1}.">QUICK MOVE</td></tr>
@@ -256,9 +271,9 @@ const showPokemon = (list) => {
                        
                       </table>
                       </article>
+                   
 
-
-                        //end added
+                      
 
                         <div class="comun-modal contenido">   
                          <div>
@@ -270,15 +285,17 @@ const showPokemon = (list) => {
                         <div class="comun-modal contenido">   
                          <div>
                            <p class="icon-type">Evolution</p>
+                           <img class="threeD-IMG" src= "https://projectpokemon.org/images/normal-sprite/${pkm.name}.gif"></img> 
 
                            <p>${pkm.evolution.candy}</p>
                           </div>
                         </div>
                    
 
-
+                        </div>
                       </div>
                      </div> 
+                    
                       `;
     document.querySelector('.container-modal').appendChild(modal);
     modal.style.display="block";
@@ -312,3 +329,5 @@ const showPokemon = (list) => {
 
   // <p class="poke-info bold"> CP Máx: ${pokem.stats['max-cp']}</p>
   //         <p class="poke-info bold"> HP Máx: ${pokem.stats['max-hp']}</p>
+
+  // <img class="threeD-IMG" src= "https://projectpokemon.org/images/normal-sprite/${pkm.name}.gif"></img> 
