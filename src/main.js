@@ -286,6 +286,7 @@ const showPokemon = (list) => {
                          <div>
                            <p class="icon-type">Evolution</p>
                            <img class="threeD-IMG" src= "https://projectpokemon.org/images/normal-sprite/${pkm.name}.gif"></img> 
+                         
 
                            <p>${pkm.evolution.candy}</p>
                           </div>
@@ -312,8 +313,16 @@ const showPokemon = (list) => {
     const table = data.map(elemento => {
       return `<td>${elemento}</td>`
     }).join('');
-    return table;
-  
+    return table;}
+
+
+
+
+
+
+
+
+    
    
     // const showStatistics= document.getElementById('bar-chart')
 
@@ -321,7 +330,7 @@ const showPokemon = (list) => {
     //  statisticsButton.addEventListener('click', () => {
     //   showStatistics.style.display = "block";
     
-  }
+ 
 
  // en el modal.. 
 //<p>${TypePokemon(pkm.resistant)}</p>
