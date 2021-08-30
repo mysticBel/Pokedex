@@ -9,20 +9,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
 
   <body>
 <header>
-      <!-- <nav class="navbar-top">
+      <nav class="navbar-top">
         <a class="navbar-top-item" title="home">Home</a>
         <a href="type-chart.html"   class="navbar-top-item" id="statistics" tittle="Statistics">Statistics</a>
-        <a  class="navbar-top-item" id="calculator" tittle="Next Evolution Calculator">Calculator</a>
+        <a  class="navbar-top-item" tittle="News">News</a>
         <a href="https://gamepress.gg/pokemongo/pokemon-go-glossary" class="navbar-top-item" tittle="Glossary">Glossary</a>
-      </nav> -->
-      <div> 
+      </nav>
+      <div id="navbar" > 
        <!-- id="navbar-logo-box">   -->
-          <!-- <img id="navbar-logo-img" src="IMG/pokemon-logo.png" alt="Pokemon logo"> -->
-           <img id= "poke-banner" src="IMG/pokemon-logo.jpg" alt="banner">
+          <img id="navbar-logo-img" src="IMG/pokemon-logo.png" alt="Pokemon logo">
+          
+           <!-- <img id= "poke-banner" src="IMG/pokemon-logo.jpg" alt="banner"> -->
       </div>
     </header>
       
@@ -84,7 +86,7 @@
         <div class="filter-individual-container"  >
           <button type="button" class="button" id="refresh"> refresh </button>
         </div>
-
+        <img id="navbar-banner-img" src="IMG/banner-pokemons.gif" alt="Pokemon gif">
     </section>
 
     <main> 
@@ -100,12 +102,22 @@
     </main>
 
 
-<!-- candy calculator -->
-    <!-- <section id="CandyCalculator">
-      
-      <div id="container-calculator"></div>  
-
-    </section> -->
+<footer>
+  <div class="footer-content">
+   
+      <ul class="socials">
+          <li><a href="https://www.facebook.com/" target="blank"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="https://www.instagram.com/pokemongoapp/?hl=es-la" target="blank"><i class="fa fa-instagram"></i></a></li>
+          <li><a href="https://twitter.com/pokemongoapp?lang=es" target="blank"><i class="fa fa-twitter"></i></a></li>
+          <img  src="IMG/footer-image.png" alt="footer-images">
+      </ul>
+  </div> 
+  <div class="footer-bottom">
+      <p>
+      <span>copyright&copy; 2021 Pokedex - Project for Laboratoria.</span>
+      </p>
+  </div>
+</footer>
 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
@@ -184,8 +196,6 @@
       <div id="bar-chart"></div>
   </div> 
 
-
-    
 
     <script src="main.js" type="module"></script>
   </body>
