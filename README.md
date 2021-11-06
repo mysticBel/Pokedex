@@ -18,7 +18,7 @@
      
 The main idea of this web page "Pokedex" is to help users to search, filter and obtain statistical data about the first 251 pokemons, in order to get a better user experience while playing the awesome game _PokemonGo_ with the information received from the Pokedex. <br>
 The product shows some main characteristics in an orderly manner. <br>
-It can be used before, during and after the user has navigated to the platform, so they can play strategically in the game.   
+It can be used before, during and after the user has navigated in the platform, so they can play strategically in the game.   
 
 
 <!-- https://media.giphy.com/media/7hgc1qosAEG7C/giphy.gif https://media.giphy.com/media/TcG7Tw3uq6tJS/giphy.gif  https://media.giphy.com/media/aEqAZzykd3kyY/giphy.gif-->
@@ -42,7 +42,7 @@ pokemon _to_  access the features much faster.
 
 
 ## User Story 2 (Beginner)
- As a Pokémon GO beginner player, I _want_ to **filer** all pokemons **by type** ( Normal, Fighting,
+ As a Pokémon GO beginner player, I _want_ to **filter** all pokemons **by type** ( Normal, Fighting,
  Flying, Poison, Ground, Rock, Bug, Ghost, Steel, Fire, Water, Grass, Electric, Psychic, Ice,
  Dragon, Dark, Fairy). _to_ decide what kind of pokemon I will use for my next battles.
 
