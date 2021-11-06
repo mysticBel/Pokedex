@@ -1,5 +1,5 @@
 # Data Lovers : Pokedex 
-
+![image](https://c.tenor.com/CpRW4WUGa3IAAAAi/pokéball-pokémon.gif) <br><br>
 ## Index
 
 * [1. Product Definition](#1-product-definition)
@@ -8,10 +8,10 @@
 * [4. Learning Objectives](#4-learning-objectives)
 * [5. Technical Considerations](#5-technical-considerations)
 * [6. Checklist](#6-checklist)
-
+<br><br>
 ***
 
-
+<br>
 
 ## 1. Product Definition
 
@@ -21,55 +21,59 @@ The product shows some main characteristics in an orderly manner. <br>
 It can be used before, during and after the user has navigated to the platform, so they can play strategically in the game.   
 
 
+<!-- https://media.giphy.com/media/7hgc1qosAEG7C/giphy.gif https://media.giphy.com/media/TcG7Tw3uq6tJS/giphy.gif  https://media.giphy.com/media/aEqAZzykd3kyY/giphy.gif-->
+<br>
 
 ## 2. User Stories
 
-
+![image](https://media.giphy.com/media/7L9FYvnh467YI/giphy.gif)
 
 ## User Story 1 (Beginner)
- _Yo como_ jugador Pokémon GO beginner _quiero_ realizar una **búsqueda** en la pagina **por nombre** del
-pokemón _para_ así acceder mucho más rápido a las características de este.
 
-**_Criterios de Aceptación:_** 
+As a Pokémon GO beginner player, I _want_ to perform a  **search** on the page **by the name** of the
+pokemon _to_  access the features much faster.
 
-     ☑️  En la interfaz debe estar visible el buscador y dentro un texto " search pokemon by name"
-     ☑️  Al dar click en la barra de busqueda, filtrar los pokemones que contengan las letras que se van colocando.
-     ☑️  La pagina debe mostrar el pokemón deseado.
+
+**_Criteria of acceptance:_**
+
+     ☑️ In the interface the search engine must be visible and inside it there must be a text saying "search pokemon by name"
+     ☑️ By clicking on the search bar, filter the pokemon that contains the letters that are being placed.
+     ☑️ The page must show the desired Pokémon.
 
 
 ## User Story 2 (Beginner)
- _Yo como_ maestro pokemon GO beginner _quiero_ **filtrar** los pokemones **por tipo** ( Normal, Fighting,
+ As a Pokémon GO beginner player, I _want_ to **filer** all pokemons **by type** ( Normal, Fighting,
  Flying, Poison, Ground, Rock, Bug, Ghost, Steel, Fire, Water, Grass, Electric, Psychic, Ice,
- Dragon, Dark, Fairy). _para_ decidir qué tipo de pokemon usaré para mis siguientes batallas.
+ Dragon, Dark, Fairy). _to_ decide what kind of pokemon I will use for my next battles.
 
-  **_Criterios de Aceptación:_**
+  
+**_Criteria of acceptance:_**
 
-     ☑️  Contar con una opción desplegable que contenga los  18 tipos de pokemones. 
-     ☑️  De todos los pokemones filtrados con  el tipo deseado poder dar clic en el pokemon deseado.
-     ☑️  Visualizar en una ventana emergente las características completas del pokemon elegido.
-
+     ☑️ Have a drop-down option that contains the 18 types of pokemons.
+     ☑️ Of all the pokemon filtered with the desired type, you can click on the desired pokemon.
+     ☑️ View the complete characteristics of the chosen pokemon in a pop-up window.
 
 ## User Story 3 (Beginner)
-_Yo como_ maestro pokemon GO beginner _quiero_ poder **ordenar** a los pokemones de la A-Z y de la
-Z-A , _para_ poder tener una visualización ordenada de los 251 Pokemones.
+As a Pokémon GO beginner player, I _want_ to  **order** the total of pokemons from A to Z and viceversa
+, to get an orderly visualization of the 251 Pokemons.
 
-**_Criterios de Aceptación:_** 
+**_Criteria of acceptance:_**
 
-     ☑️  Contar con una opcion desplegable que indique 'ORDENAR' 
-     ☑️  Al dar click, se debe mostrar las opciones : A-Z  y  Z-A
-     ☑️  Habiendo seleccionado una opción, poder visualizar los pokemones de manera ordenada.
+     ☑️ Have a drop-down option that indicates 'order by'
+     ☑️ When you click, the options should be displayed: A-Z and Z-A
+     ☑️ Having selected an option, display the pokemons in an orderly way.
  
 
 ## User Story 4 (Advanced)
-_Yo como_ maestro pokemon GO avanzado _quiero_ saber los principales ataques, movimientos, evolución
- de mis pokemones para poder **definir mi estrategia de batalla** con otros maestros pokemones.
+As a Pokémon GO advanced player I, _want_ to know the main attacks, movements, evolution
+of my Pokemon so I can ** define my battle strategy ** with other Pokemon masters.
 
-**_Criterios de Aceptación:_** 
+**_Criteria of acceptance:_**
 
-     ☑️  Contar con una interfaz que muestre a los Pokemones  
-     ☑️  Al darle click, aparecerá un modal en donde el usuario podra visualizar  las características
-          del Pokemón seleccionado.
-
+     ☑️ Have an interface that shows the Pokemons
+     ☑️ When you click, a modal will appear where the user can view the characteristics
+          of the selected Pokemon.
+<br><br>
 
 ## 3. User interface desing
 
@@ -79,10 +83,13 @@ _Yo como_ maestro pokemon GO avanzado _quiero_ saber los principales ataques, mo
 ![imag desktop](https://raw.githubusercontent.com/mysticBel/LIM015-data-lovers/main/src/design/design-1.png)
 
 ![imag mobile](https://raw.githubusercontent.com/mysticBel/LIM015-data-lovers/main/src/design/design-2.png)
+<br><br>
 
  `High fidelity prototype` 
 
  ![imag](https://raw.githubusercontent.com/mysticBel/Pokedex/main/src/IMG/design-final.png)
+<br><br>
+<br>
 
 ## 4. Learning Objectives
 
@@ -196,3 +203,14 @@ directory: 6 file: 17
 * [✔️🐶] UI: Allows you to sort data by one or more fields (asc and desc).
 * [✔️🐶] UI: Allows you to filter data based on a condition.
 * [✔️🐶] UI: It is _responsive_. *modals need fixing.
+
+
+<br><br><br>
+
+![image](https://cdn2.bulbagarden.net/upload/thumb/9/96/James_and_Chimecho.png/220px-James_and_Chimecho.png)
+<br><br>
+_**Pokedex**_  is a project done by Maribel Maza for [Laboratoria](
+https://github.com/Laboratoria/LIM015-data-lovers) , <br>July 2021 🤗
+<br><br><br>
+<a href="https://www.linkedin.com/in/maribel-maza/"><img alt="LinkedIn" src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=flat&logo=linkedin&logoColor=white"/></a> <a href="https://github.com/mysticBel"><img alt="Github" src="https://img.shields.io/github/followers/mysticBel?label=follow&style=social"/></a> &nbsp;
+<br><br><br>
